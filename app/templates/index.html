@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grass Quest 🌿</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grass Quest 🌿</h1>
+            <button id="toggleOutdoor" class="no-print">Toggle Outdoor Mode</button>
+        </header>
+
+        <!-- SETUP VIEW -->
+        <section id="setupView" class="view">
+            <div class="card">
+                <h2>Plan Your Walk</h2>
+                <label>Environment</label>
+                <select id="environment">
+                    <option value="park">Park</option>
+                    <option value="trail">Trail</option>
+                    <option value="garden">Garden</option>
+                    <option value="street">Street</option>
+                </select>
+
+                <label>Difficulty</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label>Duration (minutes)</label>
+                <select id="duration">
+                    <option value="15">15 min</option>
+                    <option value="30">30 min</option>
+                    <option value="60">60 min</option>
+                </select>
+
+                <button id="startQuest" class="btn">Generate Quest</button>
+            </div>
+        </section>
+
+        <!-- QUEST VIEW -->
+        <section id="questView" class="view hidden">
+            <div class="card" id="questCard">
+                <h2 id="questTitle">Your Quest</h2>
+                <div id="taskList"></div>
+            </div>
+            <button onclick="window.print()" class="btn btn-secondary no-print">Print / Save PDF</button>
+            <button id="finishWalk" class="btn no-print">I'm Back!</button>
+        </section>
+
+        <!-- UPLOAD VIEW -->
+        <section id="uploadView" class="view hidden">
+            <div class="card">
+                <h2>Post-Walk Journal</h2>
+                <p>Upload photos from your walk to match tasks.</p>
+                <input type="file" id="photoUpload" multiple accept="image/*">
+                <button id="processPhotos" class="btn">Match Photos & Journal</button>
+                <div id="uploadStatus"></div>
+            </div>
+        </section>
+
+        <!-- RESULT VIEW -->
+        <section id="resultView" class="view hidden">
+            <div class="card" id="journalCard">
+                <h2>Walk Journal</h2>
+                <p id="journalText"></p>
+            </div>
+            <div class="card">
+                <h3>Stats</h3>
+                <p id="streakText"></p>
+            </div>
+            <button id="newQuest" class="btn">New Walk</button>
+        </section>
+
+        <!-- HISTORY VIEW -->
+        <section id="historyView" class="view no-print">
+            <h3>Recent Walks</h3>
+            <div id="historyList"></div>
+        </section>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

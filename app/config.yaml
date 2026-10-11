@@ -1,0 +1,9 @@
+models:
+  text: "llama3.2:latest"
+  vision: "moondream"
+ollama:
+  base_url: "http://localhost:11434"
+app:
+  db_path: "data/grass_quest.db"
+  max_retries: 3
+  temperature: 0.1
